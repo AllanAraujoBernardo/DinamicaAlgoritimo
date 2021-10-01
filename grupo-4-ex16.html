@@ -25,14 +25,13 @@
         
         var ax_randon = (Math.random()*9+1).toFixed()
         var ax_num = ipt_numero.value;
-        
-        ax_x ++;
-
 
         if (ax_num < 1 || ax_num > 10) {
-            alert ('Número válido');
+            alert ('Número inválido');
         } else if (ax_num == ax_randon) {
             div_resposta.innerHTML += `Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_x} sorteios!<br>`
+        } else {
+            ax_x ++;
         }
     }
 </script>

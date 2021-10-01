@@ -7,18 +7,20 @@
     <title>Grupo 4 Ex 16</title>
 </head>
 <body>
-    <center>
+    
     <h3>Sorteio de números da sorte</h3>
 
     Qual o seu nome? <input id="ipt_nome" type="text" placeholder="Insira seu nome">
     <br><br>
     Qual o seu número inteiro da sorte de 1 a 10 ? <br>
     <input onkeyup="inserir()" id="ipt_numero" type="text"> <br><br>
-
-    <button onclick="sortear()">Sortear</button><br><br>
+    numero da sorte 2<input id='numero2'><br>
+    numero da sorte 3<input id='numero3'><br>
     
+    
+    <button onclick="sortear()">Sortear</button><br><br>
+
     <div id="div_resposta"></div>
-</center>
 
 
 </body>
@@ -26,7 +28,7 @@
 
 <script>
 
-    var ax_x = 0;
+    ax_x ++;
 
     function sortear() {
         
@@ -34,14 +36,14 @@
         var ax_num = ipt_numero.value;
         ax_x ++;
 
-        if (ax_num < 1 || ax_num > 10) {
+        if (ax_num < 1 || ax_num > 10 && numero2.value > 10 || numero2.value <= 0 && numero3.value > 10 || numero3.value <=0) {
             alert ('Número inválido');
             ax_x = 0;
-        } else if (ax_num == ax_randon) {
-            div_resposta.innerHTML += `<b style="color: green;">Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_x} sorteios!</b><br>`
+
+        } else if (ax_num == ax_randon || numero2.value == ax_random || numero3.value == ax_randon && numero2.value >0 && numero2.value <=10 && numero2.value > 0 && numero2.value <=10) {
+            div_resposta.innerHTML += `<b style="color: green;">Parabéns, ${ipt_nome.value} o seu numero da sorte foi ${ax_randon} você foi sorteado(a) após ${ax_x} sorteios!</b><br>`
             ax_x = 0;
-        } else {
-        }
+        }  
     }
 
     function inserir() {

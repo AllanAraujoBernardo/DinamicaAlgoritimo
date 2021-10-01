@@ -10,7 +10,7 @@
     Qual o seu nome? <input id="ipt_nome" type="text" placeholder="Insira seu nome">
     <br><br>
     Qual o seu número inteiro da sorte de 1 a 10 ? <br>
-    <input id="ipt_numero" type="text"> <br><br>
+    <input onkeyup="inserir()" id="ipt_numero" type="text"> <br><br>
 
     <button onclick="sortear()">Sortear</button><br>
     <div id="div_resposta"></div>
@@ -25,13 +25,19 @@
         
         var ax_randon = (Math.random()*9+1).toFixed()
         var ax_num = ipt_numero.value;
+        ax_x ++;
 
         if (ax_num < 1 || ax_num > 10) {
             alert ('Número inválido');
+            ax_x = 0;
         } else if (ax_num == ax_randon) {
             div_resposta.innerHTML += `Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_x} sorteios!<br>`
+            ax_x = 0;
         } else {
-            ax_x ++;
         }
+    }
+
+    function inserir() {
+        ax_x = 0;
     }
 </script>

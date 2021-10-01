@@ -7,6 +7,31 @@
     <title>Grupo 4 Ex 16</title>
 </head>
 <body>
-    
+    Qual o seu nome? <input id="ipt_nome" type="text" placeholder="Insira seu nome">
+    <br><br>
+    Qual o seu número inteiro da sorte de 1 a 10 ? <br>
+    <input id="ipt_numero" type="text"> <br><br>
+
+    <button onclick="sortear()">Sortear</button><br>
+    <div id="div_resposta"></div>
 </body>
 </html>
+<script>
+
+    var ax_x = 0;
+
+    function sortear() {
+        
+        var ax_num = ipt_numero.value;
+        ax_x ++;
+
+
+        if (ax_num >= 1 && ax_num <= 10) {
+            alert ('Número válido');
+            
+            div_resposta.innerHTML += `Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_x} sorteios!
+        } else {
+            alert ('Número inválido');
+        }
+    }
+</script>
